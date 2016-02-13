@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Login Success {% endblock title%}
+
+{% block content %}
+    <div class="jumbotron">
+        <h2>Welcome Dobrodošli </h2>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> Welcome! :)</div>
+                <div class="panel-body">
+                    <div class="alert alert-success alert-dissmissable">
+                        <span class="krepko">Login Success</span> You are now logged in Uspešno ste se prijavili :) 
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="/logout">Logout - Odjava</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-header">
+                <h2 class="sredinsko">Sales Data - Podatki o prodaji </h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <table class="table">
+                <tr>
+                    <th>Sales rep name</th>
+                    <th> Total Sales </th>
+                </tr>
+                {%for item in sales %}
+                    <tr>
+                        <td> {{ item.name }} </td>
+                        <td> {{ item.amount }} </td>
+                    </tr>
+                {% endfor %}
+                </table>      
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Prijava{% endblock title %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-header">
+                <h1 class="sredinsko">Login - Prijava</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            {% for message in get_flashed_messages() %}
+                <div class="flash alert alert-success">
+                    <p>
+                           {{ message }} 
+                    </p>
+                
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <form action="" method="POST" class="form-horizontal">
+                <div class="form-group">
+                    <label for="username">Username - Uporaniško Ime</label>
+                    <input type="text" name="username" id="username" placeholder="Username" value="{{ request.form.username }}" class="form-control">
+                </div>
+                <div class="from-group">
+                    <label for="password">Password - Geslo</label>
+                    <input type="password" name="password" id="password" placeholder="Password" value="{{ request.form.password }}" class="form-control">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-large  btn-primary">Login Prijava</button>
+            </form>
+        </div>
+        {% if error %}
+        <div class="row">
+            <hr>
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="alert alert-warning">
+                    <sapn class="krepko">Warning Opozorilo</sapn> {{ error }}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

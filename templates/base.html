@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/theme.css" type="text/css">
+    <title> {% block title%} {% endblock title %}</title>
+</head>
+<body>
+    <div class="navbar navbar-static-top">
+        <div class="contanier-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_zg">
+                <span class="glyphicon glyphicon-menu-hamburer"></span>
+            </button>
+            <a href="/" class="navbar-brand">Flask  Intro</a>
+            </div>
+            <div class="collapse navbar-collapse" id="nav_zg">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/welcome">Welcome</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/help">Flask Help</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <!-- end of top navbar -->
+    <div class="container">
+        {%block content%}
+        
+        {% endblock content %}
+    </div>
+   
+
+
+
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+</body>
+</html>
